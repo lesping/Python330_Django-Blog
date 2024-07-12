@@ -8,9 +8,11 @@ from blogging.models import Post, Category
 # Customized ModelAdmin class for Post and Category
 
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     pass
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     pass
