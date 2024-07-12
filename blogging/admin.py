@@ -10,11 +10,11 @@ from blogging.models import Post, Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    exclude = ('posts',)
 
 
 class CategoryInline(admin.TabularInline):
-    model = Category
+    model = Category.posts.through
 
 
 @admin.register(Post)
