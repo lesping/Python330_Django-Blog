@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import loader
 from blogging.models import Post
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 
 # Create your views here.
@@ -16,14 +18,22 @@ def stub_view(request, *args, **kwargs):
     return HttpResponse(body, content_type="text/plain")
 
 
-def list_view(request):
-    published = Post.objects.exclude(published_date__exact=None)
-    posts = published.order_by('-published_date')
-    # template = loader.get_template('blogging/list.html')
-    context = {'posts': posts}
-    # body = template.render(context)
-    # HttpResponse(body, content_type="text/html")
-    return render(request, 'blogging/list.html', context)
+class PostListView(ListView):
+    pass
+
+
+# def list_view(request):
+#     published = Post.objects.exclude(published_date__exact=None)
+#     posts = published.order_by('-published_date')
+#     # template = loader.get_template('blogging/list.html')
+#     context = {'posts': posts}
+#     # body = template.render(context)
+#     # HttpResponse(body, content_type="text/html")
+#     return render(request, 'blogging/list.html', context)
+
+
+class PostDetailView(DetailView):
+    pass
 
 
 def detail_view(request, post_id):
