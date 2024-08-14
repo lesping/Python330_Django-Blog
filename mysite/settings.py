@@ -144,8 +144,8 @@ LOGIN_REDIRECT_URL = "/"
 SOCIALACCOUNT_PROVIDERS = {
     "github": {
         "APP": {
-            "client_id": "lesping",
-            "secret": "Catolica01*",
+            "client_id": "Ov23liTAfTemG2clDSBN",
+            "secret": "c21ea3cef24528cbabdf5e76f22201717fb6fbb8",
         }
     }
 }
